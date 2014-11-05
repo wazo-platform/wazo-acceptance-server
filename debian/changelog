@@ -1,0 +1,5 @@
+xivo-acceptance-server (0.2) stable; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- Cedric Abunar <cabunar@avencall.com>  Wed, 05 Nov 2014 13:11:11 -0500

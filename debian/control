@@ -1,0 +1,15 @@
+Source: xivo-acceptance-server
+Section: admin
+Priority: extra
+Maintainer: XiVO DEV Team <dev@avencall.com>
+Uploaders: XiVO Builder Team <release@xivo.io>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.4
+
+Package: xivo-acceptance-server
+Architecture: all
+Depends: ssh
+Description: XiVO Acceptance Server
+ This package installs xivo acceptance tools
+ to a XiVO server.
+

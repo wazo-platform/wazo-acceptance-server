@@ -1,1 +1,2 @@
 authorized_keys_jenkins_test /root/.ssh/
+bin/*      usr/bin

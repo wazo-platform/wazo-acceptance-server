@@ -1,3 +1,9 @@
+xivo-acceptance-server (0.3) stable; urgency=low
+
+  * add xivo-status, xivo-release scripts
+
+ -- Cedric Abunar <cabunar@avencall.com>  Thu, 06 Nov 2014 11:51:02 -0500
+
 xivo-acceptance-server (0.2) stable; urgency=low
 
   * Initial release. (Closes: #XXXXXX)

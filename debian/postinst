@@ -1,5 +1,4 @@
 #! /bin/sh
-# postinst script for pf-sys-ssh
 #
 # see: dh_installdeb(1)
 

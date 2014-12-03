@@ -8,6 +8,7 @@ Standards-Version: 3.9.4
 
 Package: xivo-acceptance-server
 Architecture: all
+Pre-depends:  xivo-ci
 Depends: ssh
 Description: XiVO Acceptance Server
  This package installs xivo acceptance tools

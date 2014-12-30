@@ -1,0 +1,8 @@
+Flask
+flask-restless
+Flask-Restplus
+Flask-SQLAlchemy
+gevent
+git+https://github.com/xivo-pbx/xivo-lib-python.git
+pyaml
+requests

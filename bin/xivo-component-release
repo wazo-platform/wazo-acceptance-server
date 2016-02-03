@@ -21,4 +21,4 @@ if [ -z "$COMPONENT" ]; then
     exit 1
 fi
 
-echo "$(apt-cache policy $COMPONENT | grep Installed | cut -d ' ' -f4 | cut -d ':' -f2 | cut -d '~' -f1)"
+apt-cache policy $COMPONENT | grep Installed | cut -d ' ' -f4 | cut -d ':' -f2 | cut -d '~' -f1

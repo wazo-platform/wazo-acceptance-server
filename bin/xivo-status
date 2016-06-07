@@ -18,16 +18,17 @@
 
 # Checks if XiVO is correctly installed
 
-function xivo_is_installed () {
-    xivo_install_status="$(/usr/bin/dpkg-query -W '-f=${Status}' xivo 2> /dev/null)"
-    [ "$xivo_install_status" = "install ok installed" ]
+function package_is_installed () {
+	package="$1"
+    package_install_status="$(/usr/bin/dpkg-query -W '-f=${Status}' ${package} 2> /dev/null)"
+    [ "$package_install_status" = "install ok installed" ]
 }
 
 function packaging_errors () {
     apt-get install -fs -qq
 }
 
-if ! xivo_is_installed ; then
+if ! package_is_installed "xivo" && ! package_is_installed "xivo-base" ; then
     echo "Package xivo is not installed"
     exit 1
 fi

@@ -3,4 +3,10 @@
 # Copyright 2014-2019 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-cat /usr/share/wazo/WAZO-VERSION
+if [ -f /usr/share/wazo/WAZO-VERSION ]; then
+    cat /usr/share/wazo/WAZO-VERSION
+elif [ -f /usr/share/xivo/XIVO-VERSION ]; then
+    cat /usr/share/xivo/XIVO-VERSION
+else
+    exit 1
+fi

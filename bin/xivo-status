@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # -*- coding: utf-8 -*-
-# Copyright (C) 2013-2014 Avencall
+# Copyright 2013-2019 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Checks if XiVO is correctly installed
 
 function package_is_installed () {
-	package="$1"
+    package="$1"
     package_install_status="$(/usr/bin/dpkg-query -W '-f=${Status}' ${package} 2> /dev/null)"
     [ "$package_install_status" = "install ok installed" ]
 }
@@ -15,9 +15,11 @@ function packaging_errors () {
     apt-get install -fs -qq
 }
 
-if ! package_is_installed "xivo" && ! package_is_installed "xivo-base" ; then
-    echo "Package xivo is not installed"
-    exit 1
+if ! package_is_installed "wazo-platform" ; then
+    if ! package_is_installed "xivo" && ! package_is_installed "xivo-base" ; then
+        echo "Package wazo-platform is not installed"
+        exit 1
+    fi
 fi
 
 packaging_errors="$(packaging_errors)"

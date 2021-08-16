@@ -1,3 +1,14 @@
 - project:
-    templates:
-      - debian-packaging-template
+    check:
+      jobs:
+        - acceptance-server-debian-packaging
+    gate:
+      jobs:
+        - acceptance-server-debian-packaging
+
+- job:
+    name: acceptance-server-debian-packaging
+    description: Run acceptance-server debian-packaging
+    parent: debian-packaging
+    vars:
+      wazo_distribution: xivo-dev-tools

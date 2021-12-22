@@ -1,12 +1,29 @@
 #!/usr/bin/env bash
 # -*- coding: utf-8 -*-
-# Copyright 2014-2019 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2014-2021 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-if [ -f /usr/share/wazo/WAZO-VERSION ]; then
-    cat /usr/share/wazo/WAZO-VERSION
-elif [ -f /usr/share/xivo/XIVO-VERSION ]; then
-    cat /usr/share/xivo/XIVO-VERSION
+version_from_file() {
+    if [ -f /usr/share/wazo/WAZO-VERSION ]; then
+        cat /usr/share/wazo/WAZO-VERSION
+    elif [ -f /usr/share/xivo/XIVO-VERSION ]; then
+        cat /usr/share/xivo/XIVO-VERSION
+    fi
+}
+
+version_from_database() {
+    wazo-release-api
+}
+
+version_from_database="$(version_from_database)"
+version_from_file="$(version_from_file)"
+if [ "$version_from_database" = "" ] ; then
+    echo "$version_from_file"
 else
-    exit 1
+    if [ "$version_from_database" != "$version_from_file" ] ; then
+        >& 2 echo "Version mismatch: database = $version_from_database, file = $version_from_file"
+        exit 1
+    else
+        echo "$version_from_file"
+    fi
 fi

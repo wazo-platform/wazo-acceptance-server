@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# Copyright 2021 The Wazo Authors  (see the AUTHORS file)
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+import yaml
+from wazo_auth_client import Client as Auth
+from wazo_confd_client import Client as Confd
+
+with open('/var/lib/wazo-auth-keys/wazo-acceptance-server-key.yml', 'r') as credentials_file:
+    credentials = yaml.safe_load(credentials_file)
+
+auth = Auth(
+    'localhost',
+    port=9497,
+    username=credentials['service_id'],
+    password=credentials['service_key'],
+    https=False,
+    prefix='',
+)
+token = auth.token.new('wazo_user', expiration=30)['token']
+
+confd = Confd('localhost', port=9486, https=False, prefix='', token=token)
+
+version = confd.infos()['wazo_version']
+
+print(version)

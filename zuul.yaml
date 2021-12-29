@@ -11,4 +11,6 @@
     description: Run acceptance-server debian-packaging
     parent: debian-packaging
     vars:
-      wazo_distribution: xivo-dev-tools
+      wazo_distributions:
+        - xivo-dev-tools
+        - wazo-dev-buster

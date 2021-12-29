@@ -8,7 +8,11 @@ Standards-Version: 3.9.6
 Package: xivo-acceptance-server
 Architecture: all
 Pre-depends:  xivo-ci
-Depends: ssh
+Depends:
+ python3,
+ ssh,
+ wazo-auth-client-python3,
+ wazo-confd-client-python3
 Description: Wazo Acceptance Server
  This package installs xivo acceptance tools
  to a Wazo server.

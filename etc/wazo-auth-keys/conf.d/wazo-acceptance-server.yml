@@ -1,0 +1,4 @@
+wazo-acceptance-server:
+  system_user: root
+  acl:
+    - 'confd.infos.read'

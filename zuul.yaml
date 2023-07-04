@@ -1,16 +1,16 @@
 - project:
     check:
       jobs:
-        - acceptance-server-debian-packaging
+        - acceptance-server-debian-packaging-bullseye
     gate:
       jobs:
-        - acceptance-server-debian-packaging
+        - acceptance-server-debian-packaging-bullseye
 
 - job:
-    name: acceptance-server-debian-packaging
+    name: acceptance-server-debian-packaging-bullseye
     description: Run acceptance-server debian-packaging
-    parent: debian-packaging
+    parent: debian-packaging-bullseye
     vars:
       wazo_distributions:
         - xivo-dev-tools
-        - wazo-dev-buster
+        - wazo-dev-bullseye

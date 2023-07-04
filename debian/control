@@ -1,6 +1,6 @@
 Source: xivo-acceptance-server
 Section: admin
-Priority: extra
+Priority: optional
 Maintainer: Wazo Maintainers <dev@wazo.io>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6

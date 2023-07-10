@@ -1,8 +1,8 @@
 - project:
-    check:
+    wazo-check:
       jobs:
         - acceptance-server-debian-packaging-bullseye
-    gate:
+    wazo-gate:
       jobs:
         - acceptance-server-debian-packaging-bullseye
 

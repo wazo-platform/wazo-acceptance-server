@@ -7,7 +7,7 @@ Standards-Version: 3.9.6
 
 Package: xivo-acceptance-server
 Architecture: all
-Pre-depends:  xivo-ci
+Pre-depends:  wazo-ci
 Depends:
  python3,
  ssh,

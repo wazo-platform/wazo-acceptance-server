@@ -1,11 +1,11 @@
-Source: xivo-acceptance-server
+Source: wazo-acceptance-server
 Section: admin
 Priority: optional
 Maintainer: Wazo Maintainers <dev@wazo.io>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 
-Package: xivo-acceptance-server
+Package: wazo-acceptance-server
 Architecture: all
 Pre-depends:  wazo-ci
 Depends:
@@ -13,7 +13,10 @@ Depends:
  ssh,
  wazo-auth-client-python3,
  wazo-confd-client-python3
+Provides: xivo-acceptance-server
+Replaces: xivo-acceptance-server
+Conflicts: xivo-acceptance-server
 Description: Wazo Acceptance Server
- This package installs xivo acceptance tools
+ This package installs wazo acceptance tools
  to a Wazo server.
 

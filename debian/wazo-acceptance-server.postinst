@@ -6,7 +6,7 @@ case "$1" in
     configure)
         # wazo-auth may not be running
         # wazo-auth-keys may not exist
-        wazo-auth-keys service update || true
+        wazo-auth-keys service update --recreate || true
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

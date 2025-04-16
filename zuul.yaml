@@ -12,5 +12,5 @@
     parent: debian-packaging-bullseye
     vars:
       wazo_distributions:
-        - xivo-dev-tools
+        - wazo-dev-tools
         - wazo-dev-bullseye

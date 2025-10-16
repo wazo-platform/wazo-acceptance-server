@@ -5,6 +5,9 @@
     wazo-gate:
       jobs:
         - acceptance-server-debian-packaging-bookworm
+    auto-merge:
+      jobs:
+        - noop
 
 - job:
     name: acceptance-server-debian-packaging-bookworm

@@ -1,16 +1,16 @@
 - project:
     wazo-check:
       jobs:
-        - acceptance-server-debian-packaging-bullseye
+        - acceptance-server-debian-packaging-bookworm
     wazo-gate:
       jobs:
-        - acceptance-server-debian-packaging-bullseye
+        - acceptance-server-debian-packaging-bookworm
 
 - job:
-    name: acceptance-server-debian-packaging-bullseye
+    name: acceptance-server-debian-packaging-bookworm
     description: Run acceptance-server debian-packaging
-    parent: debian-packaging-bullseye
+    parent: debian-packaging-bookworm
     vars:
       wazo_distributions:
         - wazo-dev-tools
-        - wazo-dev-bullseye
+        - wazo-dev-bookworm

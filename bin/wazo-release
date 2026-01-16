@@ -16,6 +16,6 @@ version_from_file="$(version_from_file)"
 if [ "$version_from_database" != "$version_from_file" ] ; then
     >& 2 echo "Version mismatch: database = $version_from_database, file = $version_from_file"
     exit 1
-else
-    echo "$version_from_file"
 fi
+
+echo "$version_from_file"
